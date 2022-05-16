@@ -3,7 +3,9 @@
     margin: 0;
     padding:0;
     }
-
+.texto-justificado { 
+      text-align: justify;
+   } 
 body { 
 	background:#e6e6e6;
 	font-size: 16px;
@@ -53,6 +55,7 @@ header nav ul li a:hover {
        padding:20px;
        background: #fff;
        margin-bottom:20px;
+       border: black 6px double;
        }
 /* border-box, el ancho y el alto se calculan teniendo en cuenta el contenido y también el border y el padding. Es decir, el border y el padding están incluidos en el ancho y alto.*/
 aside{
