@@ -10,6 +10,9 @@
 
 </head>
 <body>
+<script type="text/javascript">
+        let t = parseInt(prompt("Ingresar numero de lanzamientos"));
+    </script>
 <header>
 <div>
 <img src="img/banner.jpg" width="1000" height="200" />
@@ -41,8 +44,108 @@
 
 
  
-Poner el codigo aqui, y la graficas igualmente 
+<script>
 
+        var a = b = c = d = e = f = 0;
+          
+        function tiradaDado(){
+            var dado = parseInt(6*Math.random()+1);
+            return dado;
+        }
+        
+        for(i=1;i<=t;i++){
+            tirada = tiradaDado();
+            switch(tirada){
+                case 1:
+                    a++;
+                    break;
+                case 2:
+                    b++;
+                    break;
+                case 3:
+                    c++;
+                    break;
+                case 4:
+                    d++;
+                    break;
+                case 5:
+                    e++;
+                    break;
+                case 6:
+                    f++;
+                    break;
+            }
+        }
+    
+        document.write("El 1 ha salido " +  a + " veces<br>");
+        document.write("El 2 ha salido " +  b + " veces<br>");
+        document.write("El 3 ha salido " +  c + " veces<br>");
+        document.write("El 4 ha salido " +  d + " veces<br>");
+        document.write("El 5 ha salido " +  e + " veces<br>");
+        document.write("El 6 ha salido " +  f + " veces<br>");
+        document.write("<br>")
+
+
+    </script>
+<div class="chartBox">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const labels = [
+    'Cara1',
+    'Cara2',
+    'Cara3',
+    'Cara4',
+    'Cara5',
+    'Cara6',
+  ];
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'Estadisticas del lanzamiento del dado',
+    data: [a, b, c, d, e, f],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 159, 64, 0.2)',
+      'rgba(255, 205, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(201, 203, 207, 0.2)'
+    ],
+    borderColor: [
+      'rgb(255, 99, 132)',
+      'rgb(255, 159, 64)',
+      'rgb(255, 205, 86)',
+      'rgb(75, 192, 192)',
+      'rgb(54, 162, 235)',
+      'rgb(153, 102, 255)',
+      'rgb(201, 203, 207)'
+    ],
+    borderWidth: 1
+  }]
+};
+
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  },
+};
+</script>
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
 
 
 
